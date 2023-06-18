@@ -120,9 +120,17 @@ else{
   same.addEventListener("click",() =>{
     window.location.reload();
   })
-playagain.addEventListener("click", () => {
+function resetScores() {
   localStorage.removeItem("sc");
   localStorage.removeItem("scr");
+}
+
+// Attach event listener to "beforeunload" event
+window.addEventListener("beforeunload", resetScores);
+
+// Attach click event listener to "playagain" button
+playagain.addEventListener("click", () => {
+  resetScores();
   window.location.reload();
 });
   
