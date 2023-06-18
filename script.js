@@ -120,7 +120,9 @@ else{
   same.addEventListener("click",() =>{
     window.location.reload();
   })
-  playagain.addEventListener("click",() =>{
-    window.location.reload();
-  })
+playagain.addEventListener("click", () => {
+  localStorage.removeItem("sc");
+  localStorage.removeItem("scr");
+  window.location.reload();
+});
   
